@@ -32,6 +32,8 @@ public class AccountManager {
 		}
 	}
 
+	// Controlla che non si verifichi il deadlock,
+	// controllando che il lock con indice minore venga acquisito prima di quello con indice maggiore
 	public void transferMoneyNoDeadlock(int from, int to, int amount) throws InsufficientBalanceException {
 		int min = from;
 		int max = to;
